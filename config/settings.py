@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     "home",
-    "servicios",    
+    "expediente",    
 ]
 
 

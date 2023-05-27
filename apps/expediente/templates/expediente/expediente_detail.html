@@ -1,0 +1,16 @@
+{% extends 'expediente/index.html' %}
+
+{% block content_expediente %}
+
+    <h2>Lista de expedientes</h2>
+    <ul>
+        <li>
+            <p><strong>número:</strong> {{ object.numero }}/{{ object.año }}</p>
+            <p><strong>Caratula:</strong> {{ object.caratula }}</p>
+            <p><strong>Juzgado:</strong> {{ object.juzgado }}</p></p>
+        </li>
+    </ul>
+
+    <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
+
+{% endblock content_expediente %}

@@ -3,7 +3,7 @@ from django import forms
 from . import models
 
 
-class ServiciosCategoriasForm(forms.ModelForm):
+class ExpedienteForm(forms.ModelForm):
     class Meta:
-        model = models.ServiciosCategorias
+        model = models.Expediente
         fields = "__all__"

@@ -5,6 +5,17 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django import forms
 from datetime import datetime
 
+
+class Juzgado(models.Model):
+    JUZGADO_ELEGIR = [
+        (1, 'Juzgado 1'),
+        (2, 'Juzgado 2'),
+        (3, 'Juzgado 3'),
+    ]
+    numero_juzgado = models.IntegerField(choices=JUZGADO_ELEGIR)
+    def __str__(self):
+        return f"{self.numero_juzgado}"
+
 class Expediente(models.Model):    
     numero = models.CharField(max_length=10)
     año = models.PositiveIntegerField(validators=[MinValueValidator(1000),MaxValueValidator(9999)])
@@ -36,4 +47,3 @@ class Evidencia(models.Model):
     cantidad = models.IntegerField(null=True, blank=True)
     descripcion = models.CharField(max_length=50, null=True, blank=True)
     
-

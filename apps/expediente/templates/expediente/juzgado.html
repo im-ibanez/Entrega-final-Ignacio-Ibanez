@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1>Juzgado</h1>
+<div class="container">
+
+    {% block content_juzgado %}
+
+        <h3>Generar Juzgados</h3>
+
+        <a href="{% url 'expediente:juzgado_create' %}">Crear</a> <br>
+    {% endblock content_juzgado %}
+
+{% endblock content %}

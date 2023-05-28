@@ -12,7 +12,7 @@ class Juzgado(models.Model):
         (2, 'Juzgado 2'),
         (3, 'Juzgado 3'),
     ]
-    numero_juzgado = models.IntegerField(choices=JUZGADO_ELEGIR)
+    numero_juzgado = models.IntegerField(choices=JUZGADO_ELEGIR, unique=True)
     def __str__(self):
         return f"{self.numero_juzgado}"
 

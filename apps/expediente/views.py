@@ -73,10 +73,22 @@ def expediente_update(request, id):
 
 #class ExpedienteDetail(DetailView):
  #   model = models.Expediente
+def juzgado(request: HttpRequest) -> HttpResponse:
+    return render(request, "expediente/juzgado.html")
+
+def juzgado_create(request):
+    if request.method == "POST":
+        form = forms.JuzgadoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("expediente:index")
+    else:
+        form = forms.JuzgadoForm()
+        return render(request, "expediente/juzgado_create.html", {"form": form})
 
 
-def index_evidencia(request: HttpRequest) -> HttpResponse:
-    return render(request, "expediente/index_evidencia.html")
+def evidencia(request: HttpRequest) -> HttpResponse:
+    return render(request, "expediente/evidencia.html")
 
 
  # def evidencia_list(request):

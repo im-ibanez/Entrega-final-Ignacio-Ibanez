@@ -12,6 +12,12 @@ urlpatterns = [
     path("expediente_detail/<int:id>", views.expediente_detail, name="expediente_detail"),
     path("juzgado/", views.juzgado, name="juzgado"),
     path("juzgado/create/", views.juzgado_create, name="juzgado_create"),
+    path("evidencia/", views.evidencia, name="evidencia"),
+    path("evidencia_create/", views.evidencia_create, name="evidencia_create"),
+    path("evidencia_confirm_delete/<int:id>", views.evidencia_delete, name="evidencia_confirm_delete"),
+    path("evidencia_update/<int:id>", views.evidencia_update, name="evidencia_update"),
+    path("evidencia_detail/<int:id>", views.evidencia_detail, name="evidencia_detail"),
+    path("evidencia_listado/", views.evidencia_list, name="evidencia_list"),
 ]
 
 # *********** URLS basadas en clases

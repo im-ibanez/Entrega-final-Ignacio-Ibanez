@@ -91,42 +91,46 @@ def evidencia(request: HttpRequest) -> HttpResponse:
     return render(request, "expediente/evidencia.html")
 
 
- # def evidencia_list(request):
-#     categorias = models.Evidencia.objects.all()
-#     context = {"categorias": categorias}
-#     return render(request, "expediente/evidencia_list.html", {"categorias": categorias})
+def evidencia_list(request):
+    evidencias = models.Evidencia.objects.all()
+    context = {"evidencias": evidencias}
+    return render(request, "expediente/evidencia_list.html", {"evidencias": evidencias})
+
+def evidencia_detail(request, id):
+    evidencia = models.Evidencia.objects.get(id=id)
+    context = {"evidencia": evidencia}
+    return render(request, "expediente/evidencia_detail.html", context)
+
+def evidencia_create(request):
+    if request.method == "POST":
+        form = forms.EvidenciaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("expediente:evidencia")
+    else:
+        form = forms.EvidenciaForm()
+    return render(request, "expediente/evidencia_create.html", {"form": form})
 
 
-# def expediente_create(request):
-#     if request.method == "POST":
-#         form = forms.ExpedienteForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("expediente:index")
-#     else:
-#         form = forms.ExpedienteForm()
-#     return render(request, "expediente/expediente_create.html", {"form": form})
 
 
+def evidencia_delete(request, id):
+    evidencia = models.Evidencia.objects.get(id=id)
+    if request.method == "POST":
+        evidencia.delete()
+        return redirect("expediente:evidencia_list")
+    return render(request, "expediente/evidencia_confirm_delete.html", {"evidencia": evidencia})
 
 
-# def expediente_delete(request, id):
-#     categoria = models.Expediente.objects.get(id=id)
-#     if request.method == "POST":
-#         categoria.delete()
-#         return redirect("expediente:expediente_list")
-#     return render(request, "expediente/expediente_delete.html", {"categoria": categoria})
-
-
-#def evidencia_update(request, id):
-#     categoria = models.Expediente.objects.get(id=id)
-#     if request.method == "POST":
-#         form = forms.ExpedienteForm(request.POST, instance=categoria)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("expediente:expediente_list")
-#     else:
-#         form = forms.ExpedienteForm(instance=categoria)
-#     return render(request, "expediente/expediente_update.html", {"form": form})
+def evidencia_update(request, id):
+    evidencia = models.Evidencia.objects.get(id=id)
+    if request.method == "POST":
+        form = forms.EvidenciaForm(request.POST, instance=evidencia)
+        if form.is_valid():
+            form.save()
+            return redirect("expediente:evidencia_list")
+    else:
+        form = forms.ExpedienteForm(instance=evidencia)
+    return render(request, "expediente/evidencia_update.html", {"form": form})
 
    

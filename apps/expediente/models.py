@@ -33,7 +33,6 @@ class Expediente(models.Model):
 # Create your models here.
 class Evidencia(models.Model):
     expediente = models.ForeignKey(Expediente, on_delete=models.SET_NULL, null=True, blank=True)
-    
     clase = models.CharField(max_length=50, null=True, blank=True)
     cantidad = models.IntegerField(null=True, blank=True)
     descripcion = models.TextField(max_length=2000, null=True, blank=True)

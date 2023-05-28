@@ -1,18 +1,18 @@
-{% extends 'expediente/index.html' %}
+{% extends 'expediente/evidencia.html' %}
 
 {% block content_evidencia %}
 
-    <h2>Lista de expedientes</h2>
+    <h2>Lista de evidencias</h2>
     <ul>
         <li>
-            <p><strong>Expediente:</strong> {{ object.expediente }}</p>
-            <p><strong>Clase:</strong> {{ object.clase }}</p>
-            <p><strong>Cantidad:</strong> {{ object.cantidad }}</p>
-            <p><strong>Descripción:</strong> {{ object.descripcion }}</p>
+            <p><strong>Expediente:</strong> {{ evidencia.expediente }}</p>
+            <p><strong>Clase:</strong> {{ evidencia.clase }}</p>
+            <p><strong>Cantidad:</strong> {{ evidencia.cantidad }}</p>
+            <p><strong>Descripción:</strong> {{ evidencia.descripcion }}</p>
         </li>
     </ul>
-    <a href="{% url 'expediente:evidencia_delete' evidencia.id %}" class="btn btn-danger">Eliminar evidencia</a>
-    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a>
+    <a href="{% url 'expediente:evidencia_confirm_delete' evidencia.id %}" class="btn btn-danger">Eliminar evidencia</a><br>
+    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a><br>
     <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
 
 {% endblock content_evidencia %}

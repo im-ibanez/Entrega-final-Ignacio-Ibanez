@@ -1,20 +1,22 @@
-{% extends 'expediente/index_evidencia.html' %}
+{% extends 'expediente/evidencia.html' %}
 
 {% block content_evidencia %}
 
     <h2>Lista de expediente</h2>
 
-    {% for evidencia in object_list %}
+    {% for evidencia in evidencias %}
         <ul>
-            <li>{{ expediente.numero }} / {{ expediente.año }}</li>
-                <a href="{% url 'expediente:evidencia_detail' expediente.id %}" class="btn btn-secondary">Ver detalle</a>
-                <a href="{% url 'expediente:evidencia_update' expediente.id %}" class="btn btn-primary">Actualizar</a>
-                <a href="{% url 'expediente:evidencia_delete' expediente.id %}" class="btn btn-danger">Eliminar</a>
+            <li>{{ evidencia.expediente }}</li>
+            <li>{{ evidencia.clase }}</li>
+                <a href="{% url 'expediente:evidencia_detail' evidencia.id %}" class="btn btn-secondary">Ver detalle</a>
+                <a href="{% url 'expediente:evidencia_update' evidencia.id %}" class="btn btn-primary">Actualizar</a>
+                <a href="{% url 'expediente:evidencia_confirm_delete' evidencia.id %}" class="btn btn-danger">Eliminar</a>
             </li>
         </ul>
     {% endfor %}
 
-    <a href="{% url 'expediente:index_evidencia' %}">Volver a índice de evidencias</a>
-    
+    <a href="{% url 'expediente:evidencia' %}">Volver a índice de evidencias</a> <br>
+    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a> <br>
+    <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
 
 {% endblock content_evidencia %}

@@ -1,4 +1,4 @@
-{% extends 'expediente/index.html' %}
+{% extends 'expediente/evidencia.html' %}
 
 {% block content_evidencia %}
 
@@ -10,7 +10,7 @@
         <button type="submit">Guardar</button>
     </form>
 
-    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a>
+    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a> <br>
     <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
 
 {% endblock content_evidencia %}

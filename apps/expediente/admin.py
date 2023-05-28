@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from . import models
 
-# admin.site.register(models.ExpedienteCategorias)
+admin.site.register(models.Evidencia)
+admin.site.register(models.Juzgado)
 
 
 @admin.register(models.Expediente)

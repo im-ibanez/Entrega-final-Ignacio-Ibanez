@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <h1>Índice de evidencias</h1>
+    <div class="container">
+
+        {% block content_evidencia %}
+
+            <h3>Evidencias</h3>
+<br><br><br>
+            <a href="{% url 'expediente:evidencia_create' %}"class="btn btn-success">Crear</a> <br><br><br><br>
+            <a href="{% url 'expediente:evidencia_list' %}"class="btn btn-primary">Listar</a> <br><br>
+        {% endblock content_evidencia %}
+
+    </div>
+    <br><br>
+<div class="d-flex justify-content-end">
+    <a href="{% url 'home:index' %}"class="btn btn-danger">Volver a inicio</a>
+</div>
+<br><br>
+{% endblock content %}

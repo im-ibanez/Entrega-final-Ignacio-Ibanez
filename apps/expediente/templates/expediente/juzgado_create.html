@@ -1,0 +1,17 @@
+{% extends 'expediente/juzgado.html' %}
+
+{% block content_juzgado %}
+
+    <h2>Generar Juzgado</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+<br><br>
+    <a href="{% url 'expediente:index' %}"class="btn btn-secondary">Volver a índice de expediente</a>
+<br><br>
+
+
+{% endblock content_juzgado %}

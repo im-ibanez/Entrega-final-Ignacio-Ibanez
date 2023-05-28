@@ -1,0 +1,18 @@
+{% extends 'expediente/evidencia.html' %}
+
+{% block content_evidencia %}
+
+    <h2>Formulario de evidencia</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <br><br>
+    <a href="{% url 'expediente:evidencia_list' %}">Volver a lista de evidencias</a> <br> <br>
+    <a href="{% url 'expediente:evidencia' %}">Volver a índice de evidencias</a><br><br>
+    <a href="{% url 'expediente:expediente_list' %}"> Volver a lista de expedientes</a> <br><br>
+    <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
+
+{% endblock content_evidencia %}

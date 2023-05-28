@@ -1,0 +1,19 @@
+{% extends 'expediente/evidencia.html' %}
+
+{% block content_evidencia %}
+
+    <h2>Lista de evidencias</h2>
+    <ul>
+        <li>
+            <p><strong>Expediente:</strong> {{ evidencia.expediente }}</p>
+            <p><strong>Clase:</strong> {{ evidencia.clase }}</p>
+            <p><strong>Cantidad:</strong> {{ evidencia.cantidad }}</p>
+            <p><strong>Descripción:</strong> {{ evidencia.descripcion }}</p>
+        </li>
+    </ul>
+    <a href="{% url 'expediente:evidencia_confirm_delete' evidencia.id %}" class="btn btn-danger">Eliminar evidencia</a><br>
+    <a href="{% url 'expediente:evidencia' %}" class= "btn btn-secondary">Volver a índice de evidencias</a><br>
+    <a href="{% url 'expediente:expediente_list' %}" class= "btn btn-secondary"> Volver a Lista de expedientes</a><br>
+    <a href="{% url 'expediente:index' %}" class= "btn btn-secondary">Volver a índice de expediente</a>
+
+{% endblock content_evidencia %}

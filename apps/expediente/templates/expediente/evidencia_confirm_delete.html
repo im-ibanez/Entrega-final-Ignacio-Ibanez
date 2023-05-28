@@ -1,0 +1,18 @@
+{% extends 'expediente/evidencia.html' %}
+
+{% block content_evidencia %}
+
+    <h2>Eliminación de evidencia</h2>
+
+    <p>¿Confirmas eliminar "{{ object }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+    </form>
+<br><br>
+    <a href="{% url 'expediente:evidencia' %}" class= "btn btn-secondary">Volver a índice de evidencias</a><br><br><br>
+    <a href="{% url 'expediente:expediente_list' %}" class= "btn btn-warning"> Volver a Lista de expedientes</a><br><br><br>
+    <a href="{% url 'expediente:index' %}" class= "btn btn-secondary">Volver a índice de expediente</a><br><br>
+
+{% endblock content_evidencia %}

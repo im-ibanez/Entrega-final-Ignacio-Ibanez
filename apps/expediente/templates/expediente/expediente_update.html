@@ -1,0 +1,16 @@
+{% extends 'expediente/index.html' %}
+
+{% block content_expediente %}
+
+    <h2>Crear expediente</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <br><br>
+    <a href="{% url 'expediente:expediente_list' %}"class="btn btn-warning">Volver a lista de expedientes</a> <br><br><br>
+    <a href="{% url 'expediente:index' %}"class="btn btn-secondary">Volver a índice de expediente</a><br><br><br>
+
+{% endblock content_expediente %}

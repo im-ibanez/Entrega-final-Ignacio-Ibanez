@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h1>Juzgado</h1>
+<h1>Índice de Juzgado</h1>
 <div class="container">
 
     {% block content_juzgado %}
 
         <h3>Generar Juzgados</h3>
-
-        <a href="{% url 'expediente:juzgado_create' %}">Crear</a> <br>
+<br><br>
+        <a href="{% url 'expediente:juzgado_create' %}"class="btn btn-success">Crear</a> <br>
     {% endblock content_juzgado %}
 
 {% endblock content %}

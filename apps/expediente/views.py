@@ -130,7 +130,7 @@ def evidencia_update(request, id):
             form.save()
             return redirect("expediente:evidencia_list")
     else:
-        form = forms.ExpedienteForm(instance=evidencia)
+        form = forms.EvidenciaForm(instance=evidencia)
     return render(request, "expediente/evidencia_update.html", {"form": form})
 
    

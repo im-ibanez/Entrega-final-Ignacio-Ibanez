@@ -12,7 +12,8 @@
         </li>
     </ul>
     <a href="{% url 'expediente:evidencia_confirm_delete' evidencia.id %}" class="btn btn-danger">Eliminar evidencia</a><br>
-    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a><br>
-    <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
+    <a href="{% url 'expediente:evidencia' %}" class= "btn btn-secondary">Volver a índice de evidencias</a><br>
+    <a href="{% url 'expediente:expediente_list' %}" class= "btn btn-secondary"> Volver a Lista de expedientes</a><br>
+    <a href="{% url 'expediente:index' %}" class= "btn btn-secondary">Volver a índice de expediente</a>
 
 {% endblock content_evidencia %}

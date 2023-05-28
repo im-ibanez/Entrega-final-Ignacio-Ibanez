@@ -2,7 +2,7 @@
 
 {% block content_evidencia %}
 
-    <h2>Lista de expediente</h2>
+    <h2>Lista de evidencias</h2>
 
     {% for evidencia in evidencias %}
         <ul>
@@ -14,9 +14,9 @@
             </li>
         </ul>
     {% endfor %}
-
-    <a href="{% url 'expediente:evidencia' %}">Volver a índice de evidencias</a> <br>
-    <a href="{% url 'expediente:expediente_list' %}"> Volver a Lista de expedientes</a> <br>
-    <a href="{% url 'expediente:index' %}">Volver a índice de expediente</a>
+    <br>
+    <a href="{% url 'expediente:evidencia' %}" class="btn btn-primary">Volver a índice de evidencias</a> <br><br>
+    <a href="{% url 'expediente:expediente_list' %}"class="btn btn-warning"> Volver a Lista de expedientes</a> <br><br>
+    <a href="{% url 'expediente:index' %}" class="btn btn-secondary">Volver a índice de expediente</a><br>
 
 {% endblock content_evidencia %}

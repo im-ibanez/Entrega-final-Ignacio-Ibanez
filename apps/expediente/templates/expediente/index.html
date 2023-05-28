@@ -2,15 +2,15 @@
 
 {% block content %}
 
-    <h1>Expediente</h1>
+    <h1>Índice de Expediente</h1>
     <div class="container">
 
         {% block content_expediente %}
 
             <h3>Expedientes</h3>
-
-            <a href="{% url 'expediente:expediente_create' %}">Crear</a> <br>
-            <a href="{% url 'expediente:expediente_list' %}">Listar</a> <br>
+<br><br>    
+            <a href="{% url 'expediente:expediente_create' %}"class="btn btn-success">Crear</a> <br><br>
+            <a href="{% url 'expediente:expediente_list' %}"class="btn btn-primary">Listar</a> <br><br>
         
         {% endblock content_expediente %}
 

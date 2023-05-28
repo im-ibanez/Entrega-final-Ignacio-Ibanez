@@ -6,10 +6,12 @@
 
     {% for expediente in object_list %}
         <ul>
-            <li>{{ expediente.numero }}
+            <li>{{ expediente.numero }} / {{ expediente.año }}</li>
                 <a href="{% url 'expediente:expediente_detail' expediente.id %}" class="btn btn-secondary">Ver detalle</a>
                 <a href="{% url 'expediente:expediente_update' expediente.id %}" class="btn btn-primary">Actualizar</a>
                 <a href="{% url 'expediente:expediente_delete' expediente.id %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'expediente:expediente_detail' expediente.id %}" class="btn btn-success">Crear evidencia</a>
+                <a href="{% url 'expediente:expediente_detail' expediente.id %}" class="btn btn-secondary">Ver evidencia</a>
             </li>
         </ul>
     {% endfor %}

@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <h1>Evidencias</h1>
+    <div class="container">
+
+        {% block content_evidencia %}
+
+            <h3>Evidencias</h3>
+
+            <a href="{% url 'expediente:evidencia_create' %}">Crear</a> <br>
+            <a href="{% url 'expediente:evidencia_list' %}">Listar</a> <br>
+        {% endblock content_evidencia %}
+
+    </div>
+{% endblock content %}

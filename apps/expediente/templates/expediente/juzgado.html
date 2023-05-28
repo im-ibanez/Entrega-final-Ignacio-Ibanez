@@ -10,6 +10,11 @@
         <h3>Generar Juzgados</h3>
 <br><br>
         <a href="{% url 'expediente:juzgado_create' %}"class="btn btn-success">Crear</a> <br>
+        <br><br>
     {% endblock content_juzgado %}
-
+    <br><br>
+    <div class="d-flex justify-content-end">
+        <a href="{% url 'home:index' %}"class="btn btn-danger">Volver a inicio</a>
+    </div>
+    <br><br>
 {% endblock content %}

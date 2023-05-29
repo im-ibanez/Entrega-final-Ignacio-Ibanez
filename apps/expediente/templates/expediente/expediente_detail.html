@@ -8,9 +8,9 @@
             <p><strong>número:</strong> {{ expediente.numero }}/{{ expediente.año }}</p>
             <p><strong>Caratula:</strong> {{ expediente.caratula }}</p>
             <p><strong>Juzgado:</strong> {{ expediente.juzgado }}</p></p>
-        </li>
+    </li>
     </ul>
-<br><br>
+    <br><br>
     <a href="{% url 'expediente:index' %}"class="btn btn-secondary">Volver a índice de expediente</a>
-<br><br>
+    <br><br>
 {% endblock content_expediente %}

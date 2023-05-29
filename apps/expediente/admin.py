@@ -12,3 +12,6 @@ class ExpedienteAdmin(admin.ModelAdmin):
     search_fields = ("numero__año",)   
     list_filter = (("numero__año", admin.RelatedOnlyFieldListFilter),)   
     ordering = ("numero",)
+
+
+#admin.site.register(Avatar)

@@ -6,6 +6,7 @@ from django import forms
 from datetime import datetime
 
 
+
 class Juzgado(models.Model):
     JUZGADO_ELEGIR = [
         (1, 'Juzgado 1'),

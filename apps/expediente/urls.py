@@ -1,17 +1,18 @@
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 # *********** URLS basadas en funciones
 urlpatterns = [
     path("", views.index, name="index"),
     path("expediente_listado/", views.expediente_list, name="expediente_list"),
-    path("expediente_create/", views.expediente_create, name="expediente_create"),
+    path("expediente_create/", views.expediente_create, name="expediente_create"), # type: ignore
     path("expediente_confirm_delete/<int:id>", views.expediente_delete, name="expediente_delete"),
     path("expediente_update/<int:id>", views.expediente_update, name="expediente_update"),
     path("expediente_detail/<int:id>", views.expediente_detail, name="expediente_detail"),
     path("juzgado/", views.juzgado, name="juzgado"),
-    path("juzgado/create/", views.juzgado_create, name="juzgado_create"),
+    path("juzgado/create/", views.juzgado_create, name="juzgado_create"), # type: ignore
     path("evidencia/", views.evidencia, name="evidencia"),
     path("evidencia_create/", views.evidencia_create, name="evidencia_create"),
     path("evidencia_confirm_delete/<int:id>", views.evidencia_delete, name="evidencia_confirm_delete"),
@@ -19,6 +20,10 @@ urlpatterns = [
     path("evidencia_detail/<int:id>", views.evidencia_detail, name="evidencia_detail"),
     path("evidencia_listado/", views.evidencia_list, name="evidencia_list"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 
 # *********** URLS basadas en clases
 #urlpatterns = [

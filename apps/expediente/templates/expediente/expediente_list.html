@@ -7,14 +7,14 @@
     {% for expediente in expedientes %}
         <ul>
             <li>{{ expediente.numero }} / {{ expediente.año }}</li>
-                <a href="{% url 'expediente:expediente_detail' expediente.id %}" class="btn btn-secondary">Ver detalle</a>
-                <a href="{% url 'expediente:expediente_update' expediente.id %}" class="btn btn-primary">Actualizar</a>
-                <a href="{% url 'expediente:expediente_delete' expediente.id %}" class="btn btn-danger">Eliminar</a>
-                                 
-            </li>
+            <a href="{% url 'expediente:expediente_detail' expediente.id %}" class="btn btn-secondary">Ver detalle</a>
+            <a href="{% url 'expediente:expediente_update' expediente.id %}" class="btn btn-primary">Actualizar</a>
+            <a href="{% url 'expediente:expediente_delete' expediente.id %}" class="btn btn-danger">Eliminar</a>
+
+        </li>
         </ul>
     {% endfor %}
-<br><br>
+    <br><br>
     <a href="{% url 'expediente:index' %}"class="btn btn-secondary">Volver a índice de expediente</a>
     <br><br>
 

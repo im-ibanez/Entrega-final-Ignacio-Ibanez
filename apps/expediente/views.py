@@ -1,3 +1,4 @@
+from msilib.schema import ListView
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 #from django.urls import reverse_lazy
@@ -37,6 +38,7 @@ def expediente_detail(request, id):
 #class ExpedienteCreate(CreateView):
 #    model = models.Expediente
  #   form_class = forms.ExpedienteForm
+ #   template_name = "expediente/expediente_create.html"
   #  success_url = reverse_lazy("expediente:index")
 
 
@@ -50,6 +52,7 @@ def expediente_delete(request, id):
 
 #class ExpedienteDelete(DeleteView):
  #   model = models.Expediente
+ #  template_name = "expediente/expediente_confirm_delete.html"
   #  success_url = reverse_lazy("expediente:expediente_list")
 
 
@@ -133,4 +136,7 @@ def evidencia_update(request, id):
         form = forms.EvidenciaForm(instance=evidencia)
     return render(request, "expediente/evidencia_update.html", {"form": form})
 
-   
+#class ExpedienteList(ListView):
+ #   model = models.Expediente
+  #  template_name = "expediente/expediente_list.html"
+   # context_name = "expedientes"

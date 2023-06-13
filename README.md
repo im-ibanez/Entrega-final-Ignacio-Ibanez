@@ -1,4 +1,4 @@
-# tercera-pre-entrega-ibanez2
+# entrega-final-Ignacio-Ibañez
 
 Alumno: Ignacio Manuel Ibañez
 

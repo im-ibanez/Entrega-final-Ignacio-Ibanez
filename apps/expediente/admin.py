@@ -2,6 +2,9 @@ from django.contrib import admin
 
 from . import models
 
+admin.site.site_title = "Expedientes"
+admin.site.site_header = "Gestión de Expedientes y Evidencias"
+
 admin.site.register(models.Evidencia)
 admin.site.register(models.Juzgado)
 

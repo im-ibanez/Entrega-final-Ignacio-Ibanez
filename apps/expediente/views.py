@@ -2,7 +2,7 @@ from msilib.schema import ListView
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 #from django.urls import reverse_lazy
-#from django.views.generic import DetailView, ListView
+#from django.views.generic import DetailView, ListView, TemplateView
 #from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from . import forms, models
@@ -10,6 +10,10 @@ from . import forms, models
 
 def index(request: HttpRequest) -> HttpResponse:
     return render(request, "expediente/index.html")
+
+#class Indexview(TemplateView):
+ #   template_name = "expediente/index.html"
+
 
 # Create your views here.
 def expediente_create(request):
@@ -140,3 +144,11 @@ def evidencia_update(request, id):
  #   model = models.Expediente
   #  template_name = "expediente/expediente_list.html"
    # context_name = "expedientes"
+   #def get_queryset(self):
+    #   if self.request.GET.get("consulta"):
+     #      query = self.request.GET.get("consulta")
+      #     object_list = models.Expediente.objects.filter(numero__icontains=query)
+      # else: 
+      #     object_list = models.Expediente.objects.all()
+      # return object_list    
+            
